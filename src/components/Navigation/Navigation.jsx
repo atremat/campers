@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import css from './Navigation.module.css';
 import clsx from 'clsx';
+import logo from '../../assets/camper.svg';
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -8,8 +9,10 @@ const buildLinkClass = ({ isActive }) => {
 
 export const Navigation = () => {
   return (
-    <header>
-      <p className={css.logo}>Logo</p>
+    <header className={css.header}>
+      <span className={css.logo}>
+        <img src={logo} alt="Company Logo" width="40" height="40" />
+      </span>
 
       <nav className={css.nav}>
         <ul className={css.list}>

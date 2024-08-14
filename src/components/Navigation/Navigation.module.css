@@ -1,0 +1,25 @@
+.header {
+  background-color: #475467;
+  color: #fff;
+  display: flex;
+  padding: 20px;
+}
+
+.logo {
+  margin-right: 50px;
+}
+
+.list {
+  display: flex;
+  list-style-type: none;
+}
+
+.link {
+  font-size: 24px;
+  color: #f7f7f7;
+  margin-right: 40px;
+}
+
+.active {
+  color: #ffc531;
+}
