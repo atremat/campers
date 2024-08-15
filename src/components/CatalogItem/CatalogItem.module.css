@@ -37,6 +37,17 @@
   font-size: 24px;
   line-height: 1.25;
   color: #101828;
+  max-width: 340px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.priceWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .price {
@@ -47,9 +58,18 @@
   color: #101828;
 }
 
+.like {
+  align-self: center;
+}
+
 .ratingWrapper {
   display: flex;
-  gap: 16px;
+  align-items: center;
+}
+
+.star {
+  fill: #ffc531;
+  margin-right: 4px;
 }
 
 .rating {
@@ -60,6 +80,7 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: #101828;
+  margin-right: 16px;
 }
 
 .location {
@@ -83,4 +104,23 @@
 }
 
 .additionalInfo {
+}
+
+.moreBtn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #fff;
+  border-radius: 200px;
+  padding: 16px 40px;
+  width: 166px;
+  height: 56px;
+  background: #e44848;
+  transition: background-color 0.3s ease;
+}
+
+.moreBtn:hover {
+  background: #d84343;
 }
