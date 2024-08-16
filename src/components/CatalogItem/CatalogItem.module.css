@@ -124,3 +124,7 @@
 .moreBtn:hover {
   background: #d84343;
 }
+
+.locationIcon {
+  margin-right: 4px;
+}

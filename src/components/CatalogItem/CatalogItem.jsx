@@ -46,7 +46,15 @@ export const CatalogItem = ({ item }) => {
             <p
               className={css.rating}
             >{`${item.rating} (${item.reviews.length} Reviews)`}</p>
-            <p className={location}>{item.location}</p>
+            <p className={location}>
+              <Icon
+                id="geo"
+                width={16}
+                height={16}
+                className={css.locationIcon}
+              />
+              {item.location}
+            </p>
           </div>
         </div>
         <p className={css.aboutText}>{item.description}</p>

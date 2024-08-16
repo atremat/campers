@@ -6,13 +6,13 @@ import { useEffect } from 'react';
 Modal.setAppElement('#root');
 
 const ModalWindow = ({ modalIsOpen, onCloseModal, children }) => {
-  // useEffect(() => {
-  //   if (modalIsOpen) {
-  //     document.body.classList.add(style.modalOpen);
-  //   } else {
-  //     document.body.classList.remove(style.modalOpen);
-  //   }
-  // }, [modalIsOpen]);
+  useEffect(() => {
+    document.body.classList.add(style.modalOpen);
+
+    return () => {
+      document.body.classList.remove(style.modalOpen);
+    };
+  }, []);
 
   return (
     <Modal

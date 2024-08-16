@@ -5,6 +5,7 @@ import { selectLocation } from '../../redux/filters/selectors';
 import { changeFilterLocation } from '../../redux/filters/slice';
 import { VehicleEquipment } from '../VehicleEquipment/VehicleEquipment';
 import { VehicleType } from '../VehicleType/VehicleType';
+import Icon from '../Icon/Icon';
 
 export const SideBar = () => {
   const locationValue = useSelector(selectLocation);
@@ -21,15 +22,18 @@ export const SideBar = () => {
         <label htmlFor={locationId} className={css.locationLabel}>
           Location
         </label>
-        <input
-          className={css.location}
-          placeholder="Kyiv, Ukraine for example"
-          type="text"
-          name="location"
-          id={locationId}
-          value={locationValue}
-          onChange={handleChangeLocation}
-        />
+        <div className={css.inputWrapper}>
+          <input
+            className={css.location}
+            placeholder="City"
+            type="text"
+            name="location"
+            id={locationId}
+            value={locationValue}
+            onChange={handleChangeLocation}
+          />
+          <Icon id="geo" width={18} height={20} className={css.locationIcon} />
+        </div>
       </div>
 
       <p className={css.text}>Filters</p>

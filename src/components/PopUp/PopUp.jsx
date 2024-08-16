@@ -20,7 +20,15 @@ export const PopUp = ({ modalIsOpen, onCloseModal, item }) => {
           <p
             className={css.rating}
           >{`${item.rating} (${item.reviews.length} Reviews)`}</p>
-          <p className={location}>{item.location}</p>
+          <p className={location}>
+            <Icon
+              id="geo"
+              width={16}
+              height={16}
+              className={css.locationIcon}
+            />
+            {item.location}
+          </p>
         </div>
 
         <h3 className={css.price}>€ {item.price.toFixed(2)}</h3>
