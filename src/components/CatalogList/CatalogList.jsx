@@ -4,17 +4,21 @@ import { selectCampersList } from '../../redux/campers/selectors';
 import { CatalogItem } from '../CatalogItem/CatalogItem';
 import { useState } from 'react';
 
+const PER_PAGE = 4;
+
 export const CatalogList = () => {
-  const [isMoreVisible, setIsMoreVisible] = useState(true);
   const campersList = useSelector(selectCampersList);
 
+  const [page, setPage] = useState(1);
   const [visibleCampersList, setVisibleCampersList] = useState(
-    campersList.slice(0, 4)
+    campersList.slice(0, page * PER_PAGE)
   );
 
+  const isVisible = !(page * PER_PAGE > visibleCampersList.length);
+
   const handleShowMore = () => {
-    setIsMoreVisible(false);
-    setVisibleCampersList(campersList);
+    setVisibleCampersList(campersList.slice(0, (page + 1) * PER_PAGE));
+    setPage(prev => prev + 1);
   };
 
   return (
@@ -25,7 +29,7 @@ export const CatalogList = () => {
         ))}
       </ul>
 
-      {isMoreVisible && (
+      {isVisible && (
         <button className={css.more} type="button" onClick={handleShowMore}>
           Load more
         </button>
