@@ -2,8 +2,19 @@ import css from './CatalogItem.module.css';
 
 import { CamperItemOptions } from '../CamperItemOptions/CamperItemOptions';
 import Icon from '../Icon/Icon';
+import { useState } from 'react';
+import { PopUp } from '../PopUp/PopUp';
 
 export const CatalogItem = ({ item }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const handleOpenModal = () => {
+    setModalIsOpen(true);
+  };
   return (
     <li className={css.item}>
       <img src={item.gallery[0]} className={css.image} />
@@ -38,14 +49,18 @@ export const CatalogItem = ({ item }) => {
             <p className={location}>{item.location}</p>
           </div>
         </div>
-
         <p className={css.aboutText}>{item.description}</p>
-
         <CamperItemOptions item={item} />
-
-        <button type="button" className={css.moreBtn}>
+        <button type="button" className={css.moreBtn} onClick={handleOpenModal}>
           Show more
         </button>
+        {modalIsOpen && (
+          <PopUp
+            modalIsOpen={modalIsOpen}
+            onCloseModal={handleCloseModal}
+            item={item}
+          />
+        )}
       </div>
     </li>
   );
