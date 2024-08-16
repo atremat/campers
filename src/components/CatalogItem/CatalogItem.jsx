@@ -14,7 +14,7 @@ export const CatalogItem = ({ item }) => {
             <div className={css.priceWrapper}>
               <h3 className={css.price}>€ {item.price.toFixed(2)}</h3>
               <Icon
-                id="like-new"
+                id="like"
                 className={css.like}
                 width={24}
                 height={24}
@@ -42,17 +42,6 @@ export const CatalogItem = ({ item }) => {
         <p className={css.aboutText}>{item.description}</p>
 
         <CamperItemOptions item={item} />
-        {/* <div className={css.additionalInfo}>
-          {Object.entries(item.details)
-            .filter(
-              ([key, value]) => value !== null && value !== '' && value != 0
-            )
-            .map(([key, value]) => (
-              <span key={key} className={css.option}>
-                {key}: {value}
-              </span>
-            ))}
-        </div> */}
 
         <button type="button" className={css.moreBtn}>
           Show more

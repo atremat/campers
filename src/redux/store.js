@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { campersReducer } from './campers/slice';
-// import { filtersReducer } from './filters/slice';
+import { filtersReducer } from './filters/slice';
 
 import {
   persistStore,
@@ -24,7 +24,7 @@ const campersPersistConfig = {
 export const store = configureStore({
   reducer: {
     campers: persistReducer(campersPersistConfig, campersReducer),
-    // filters: filtersReducer,
+    filters: filtersReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

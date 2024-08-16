@@ -2,8 +2,6 @@ import Icon from '../Icon/Icon';
 import css from './CamperItemOptions.module.css';
 
 export const CamperItemOptions = ({ item }) => {
-  console.log(item);
-
   return (
     <ul className={css.list}>
       <li className={css.item}>
@@ -63,7 +61,7 @@ export const CamperItemOptions = ({ item }) => {
       {item.details.airConditioner && (
         <li className={css.item}>
           <Icon
-            id="ac-converted"
+            id="ac"
             width={20}
             height={20}
             className={css.icon}
