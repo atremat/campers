@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectLocation } from '../../redux/filters/selectors';
 import { changeFilterLocation } from '../../redux/filters/slice';
 import { VehicleEquipment } from '../VehicleEquipment/VehicleEquipment';
+import { VehicleType } from '../VehicleType/VehicleType';
 
 export const SideBar = () => {
   const locationValue = useSelector(selectLocation);
@@ -15,7 +16,7 @@ export const SideBar = () => {
   };
 
   return (
-    <div className={css.sidebar}>
+    <section className={css.sidebar}>
       <div className={css.locationWrapper}>
         <label htmlFor={locationId} className={css.locationLabel}>
           Location
@@ -34,6 +35,8 @@ export const SideBar = () => {
       <p className={css.text}>Filters</p>
 
       <VehicleEquipment />
-    </div>
+
+      <VehicleType />
+    </section>
   );
 };
