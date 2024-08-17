@@ -58,7 +58,9 @@ export const CatalogItem = ({ item }) => {
           </div>
         </div>
         <p className={css.aboutText}>{item.description}</p>
+
         <CamperItemOptions item={item} />
+
         <button type="button" className={css.moreBtn} onClick={handleOpenModal}>
           Show more
         </button>

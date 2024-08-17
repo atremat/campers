@@ -1,6 +1,9 @@
 import Icon from '../Icon/Icon';
 import ModalWindow from '../ModalWindow/ModalWindow';
 import css from './PopUp.module.css';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import { PopUpAddInfo } from '../PopUpAddInfo/PopUpAddInfo';
 
 export const PopUp = ({ modalIsOpen, onCloseModal, item }) => {
   return (
@@ -32,18 +35,21 @@ export const PopUp = ({ modalIsOpen, onCloseModal, item }) => {
         </div>
 
         <h3 className={css.price}>€ {item.price.toFixed(2)}</h3>
+        <PerfectScrollbar className={css.scrollContainer}>
+          <ul className={css.list}>
+            {item.gallery.map((image, idx) => {
+              return (
+                <li key={idx} className={css.item}>
+                  <img src={image} className={css.photo} />
+                </li>
+              );
+            })}
+          </ul>
 
-        <ul className={css.list}>
-          {item.gallery.map((image, idx) => {
-            return (
-              <li key={idx} className={css.item}>
-                <img src={image} className={css.photo} />
-              </li>
-            );
-          })}
-        </ul>
+          <p className={css.aboutText}>{item.description}</p>
 
-        <p className={css.aboutText}>{item.description}</p>
+          <PopUpAddInfo item={item} />
+        </PerfectScrollbar>
       </div>
     </ModalWindow>
   );

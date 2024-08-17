@@ -14,6 +14,7 @@ export const CamperItemOptions = ({ item }) => {
         />
         {item.adults} adults
       </li>
+
       <li className={css.item}>
         <Icon
           id="transmission"
@@ -25,6 +26,7 @@ export const CamperItemOptions = ({ item }) => {
         {item.transmission.charAt(0).toUpperCase() +
           item.transmission.slice(1).toLowerCase()}
       </li>
+
       <li className={css.item}>
         <Icon
           id="fuel"
@@ -36,7 +38,8 @@ export const CamperItemOptions = ({ item }) => {
         {item.engine.charAt(0).toUpperCase() +
           item.engine.slice(1).toLowerCase()}
       </li>
-      {item.details.kitchen && (
+
+      {item.details.kitchen && item.details.kitchen != 0 && (
         <li className={css.item}>
           <Icon
             id="kitchen"
@@ -48,6 +51,7 @@ export const CamperItemOptions = ({ item }) => {
           Kitchen
         </li>
       )}
+
       <li className={css.item}>
         <Icon
           id="bed"
@@ -58,7 +62,8 @@ export const CamperItemOptions = ({ item }) => {
         />
         {item.details.beds} beds
       </li>
-      {item.details.airConditioner && (
+
+      {item.details.airConditioner && item.details.airConditioner != 0 && (
         <li className={css.item}>
           <Icon
             id="ac"
