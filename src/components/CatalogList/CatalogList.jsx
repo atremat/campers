@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import css from './CatalogList.module.css';
-// import { selectCampersList } from '../../redux/campers/selectors';
 import { CatalogItem } from '../CatalogItem/CatalogItem';
 import { selectFilteredCampers } from '../../redux/filters/selectors';
 import { useEffect, useState } from 'react';

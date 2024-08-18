@@ -7,6 +7,7 @@ const filterInitialState = {
   isKitchen: false,
   isTV: false,
   isShower: false,
+  vehicleType: 'panelTruck',
 };
 
 const filtersSlice = createSlice({
@@ -31,6 +32,9 @@ const filtersSlice = createSlice({
     toggleShower(state) {
       state.isShower = !state.isShower;
     },
+    changeVehicleType(state, action) {
+      state.vehicleType = action.payload;
+    },
   },
 });
 
@@ -41,5 +45,6 @@ export const {
   toggleKitchen,
   toggleTV,
   toggleShower,
+  changeVehicleType,
 } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

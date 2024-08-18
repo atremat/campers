@@ -1,13 +1,17 @@
 import clsx from 'clsx';
 import Icon from '../Icon/Icon';
 import css from './VehicleType.module.css';
-import { useState } from 'react';
+// import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectVehicleType } from '../../redux/filters/selectors';
+import { changeVehicleType } from '../../redux/filters/slice.js';
 
 export const VehicleType = () => {
-  const [vehicleType, setVehicleType] = useState('camperWindow');
-
+  const dispatch = useDispatch();
+  // const [vehicleType, setVehicleType] = useState('camperWindow');
+  const vehicleType = useSelector(selectVehicleType);
   const handleChange = e => {
-    setVehicleType(e.target.value);
+    dispatch(changeVehicleType(e.target.value));
   };
 
   return (
@@ -19,7 +23,7 @@ export const VehicleType = () => {
           className={css.item}
           style={{
             border:
-              vehicleType === 'camperWindow'
+              vehicleType === 'panelTruck'
                 ? '1px solid #E44848'
                 : '1px solid rgba(16, 24, 40, 0.2)',
           }}
@@ -35,9 +39,9 @@ export const VehicleType = () => {
             <input
               type="radio"
               name="vehicleType"
-              value="camperWindow"
-              checked={vehicleType === 'camperWindow'}
-              id="camperWindow"
+              value="panelTruck"
+              checked={vehicleType === 'panelTruck'}
+              id="panelTruck"
               style={{ display: 'none' }}
               onChange={handleChange}
             />
@@ -56,7 +60,7 @@ export const VehicleType = () => {
           className={css.item}
           style={{
             border:
-              vehicleType === 'camperDoor'
+              vehicleType === 'fullyIntegrated'
                 ? '1px solid #E44848'
                 : '1px solid rgba(16, 24, 40, 0.2)',
           }}
@@ -72,9 +76,9 @@ export const VehicleType = () => {
             <input
               type="radio"
               name="vehicleType"
-              value="camperDoor"
-              checked={vehicleType === 'camperDoor'}
-              id="camperDoor"
+              value="fullyIntegrated"
+              checked={vehicleType === 'fullyIntegrated'}
+              id="fullyIntegrated"
               style={{ display: 'none' }}
               onChange={handleChange}
             />

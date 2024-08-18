@@ -13,11 +13,16 @@ export const selectTV = state => state.filters.isTV;
 
 export const selectShower = state => state.filters.isShower;
 
+export const selectVehicleType = state => state.filters.vehicleType;
+
 export const selectFilteredCampers = createSelector(
-  [selectCampersList, selectLocation],
-  (campers, valueFilter) => {
-    const visibleContacts = campers.filter(({ location }) => {
-      return location.toLowerCase().includes(valueFilter.trim().toLowerCase());
+  [selectCampersList, selectLocation, selectVehicleType],
+  (campers, valueFilter, vehicleType) => {
+    const visibleContacts = campers.filter(({ location, form }) => {
+      return (
+        location.toLowerCase().includes(valueFilter.trim().toLowerCase()) &&
+        form === vehicleType
+      );
     });
 
     return visibleContacts;
