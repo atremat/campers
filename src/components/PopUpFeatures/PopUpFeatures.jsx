@@ -1,3 +1,4 @@
+import { BookForm } from '../BookForm/BookForm';
 import { FeaturesOptions } from '../FeaturesOptions/FeaturesOptions';
 import css from './PopUpFeatures.module.css';
 
@@ -41,6 +42,8 @@ const PopUpFeatures = ({ item }) => {
           </li>
         </ul>
       </div>
+
+      <BookForm />
     </section>
   );
 };
