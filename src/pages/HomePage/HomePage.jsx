@@ -1,5 +1,4 @@
 import css from './HomePage.module.css';
-import image from '../../assets/camper.jpg';
 
 const HomePage = () => {
   return (
