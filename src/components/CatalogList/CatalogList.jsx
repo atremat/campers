@@ -14,7 +14,7 @@ export const CatalogList = () => {
     campersList.slice(0, page * PER_PAGE)
   );
 
-  const isVisible = !(page * PER_PAGE > visibleCampersList.length);
+  const isVisible = page * PER_PAGE < campersList.length;
 
   const handleShowMore = () => {
     setVisibleCampersList(campersList.slice(0, (page + 1) * PER_PAGE));

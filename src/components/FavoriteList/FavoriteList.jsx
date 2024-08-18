@@ -18,7 +18,7 @@ export const FavoriteList = ({ favoriteIds }) => {
     setVisibleCampersList(campersList.slice(0, page * PER_PAGE));
   }, [campersList, page]);
 
-  const isVisible = !(page * PER_PAGE > visibleCampersList.length);
+  const isVisible = page * PER_PAGE < campersList.length;
 
   const handleShowMore = () => {
     setPage(prev => prev + 1);

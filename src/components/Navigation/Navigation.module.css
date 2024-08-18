@@ -1,14 +1,15 @@
 .header {
   background-color: #475467;
+  width: 100%;
   color: #fff;
-  display: flex;
+  /* display: flex; */
   padding: 20px;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .container {
   width: 1312px;
-
+  margin: 0 auto;
   display: flex;
   /* padding: 20px; */
 }

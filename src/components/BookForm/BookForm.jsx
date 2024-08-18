@@ -13,11 +13,8 @@ const FeedbackSchema = Yup.object().shape({
     .max(50, 'Too Long!')
     .required('Required'),
   email: Yup.string().email('Must be a valid email!').required('Required'),
-  date: Yup.date(),
-  comment: Yup.string()
-    .min(3, 'Too short')
-    .max(256, 'Too long')
-    .required('Required'),
+  date: Yup.date().required('Required'),
+  comment: Yup.string().min(3, 'Too short').max(256, 'Too long'),
 });
 
 const initialValues = {
@@ -73,7 +70,7 @@ export const BookForm = () => {
               placeholder="Name"
               className={clsx(css.username, css.field)}
             />
-            <ErrorMessage name="username" component="span" />
+            <ErrorMessage name="username" component="p" className={css.error} />
           </div>
 
           <div className={css.emailWrapper}>
@@ -84,7 +81,7 @@ export const BookForm = () => {
               placeholder="Email"
               className={clsx(css.email, css.field)}
             />
-            <ErrorMessage name="email" component="span" />
+            <ErrorMessage name="email" component="p" className={css.error} />
           </div>
 
           <div className={css.dateWrapper}>
@@ -103,7 +100,7 @@ export const BookForm = () => {
                 height={16}
                 fillColor="#101828"
               />
-              <ErrorMessage name="date" component="span" />
+              <ErrorMessage name="date" component="p" className={css.error} />
             </label>
           </div>
 
@@ -115,7 +112,7 @@ export const BookForm = () => {
               placeholder="Comment"
               className={clsx(css.comment, css.field)}
             />
-            <ErrorMessage name="comment" component="span" />
+            <ErrorMessage name="comment" component="p" className={css.error} />
           </div>
 
           <button type="submit" className={css.button}>

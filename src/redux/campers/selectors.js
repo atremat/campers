@@ -11,8 +11,10 @@ export const selectFavoritesList = createSelector(
       favoritesId.includes(camper._id)
     );
 
-    console.log('favorites: ', favorites);
-
     return favorites;
   }
 );
+
+export const selectLoading = state => state.campers.loading;
+
+export const selectError = state => state.campers.error;
