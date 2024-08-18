@@ -1,8 +1,17 @@
 import css from './HomePage.module.css';
+import image from '../../assets/camper.jpg';
 
 const HomePage = () => {
   return (
     <main className={css.main}>
+      <section className={css.hero}>
+        <ul className={css.list}>
+          <li className={css.item}>+ Wide Selection</li>
+          <li className={css.item}>+ Easy Booking</li>
+          <li className={css.item}>+ Customizable Options</li>
+        </ul>
+      </section>
+
       <div className={css.contaier}>
         <h1>Campersland</h1>
         <p>

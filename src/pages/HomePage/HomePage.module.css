@@ -1,11 +1,11 @@
 .main {
-  padding-left: 16px;
-  padding-right: 16px;
   padding-top: 50px;
 }
 
 .contaier {
   width: 1312px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin: 0 auto;
 }
 
@@ -15,4 +15,23 @@ p {
   font-size: 16px;
   line-height: 1.5;
   color: #475467;
+}
+
+.hero {
+  background-image: url('../../assets/camper.webp');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  position: relative;
+}
+
+.list {
+  position: absolute;
+  top: 150px;
+  right: 600px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #e44848;
 }
