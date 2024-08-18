@@ -35,3 +35,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

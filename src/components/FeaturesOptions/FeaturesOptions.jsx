@@ -27,7 +27,7 @@ export const FeaturesOptions = ({ item }) => {
           item.transmission.slice(1).toLowerCase()}
       </li>
 
-      {item.details.airConditioner && item.details.airConditioner != 0 && (
+      {item.details.airConditioner != 0 && (
         <li className={css.item}>
           <Icon
             id="ac"
@@ -52,7 +52,7 @@ export const FeaturesOptions = ({ item }) => {
           item.engine.slice(1).toLowerCase()}
       </li>
 
-      {item.details.kitchen && item.details.kitchen != 0 && (
+      {item.details.kitchen != 0 && (
         <li className={css.item}>
           <Icon
             id="kitchen"
@@ -76,7 +76,7 @@ export const FeaturesOptions = ({ item }) => {
         beds
       </li>
 
-      {item.details.airConditioner && item.details.airConditioner != 0 && (
+      {item.details.airConditioner != 0 && (
         <li className={css.item}>
           <Icon
             id="conditioner"
@@ -89,7 +89,7 @@ export const FeaturesOptions = ({ item }) => {
         </li>
       )}
 
-      {item.details.CD && item.details.CD != 0 && (
+      {item.details.CD != 0 && (
         <li className={css.item}>
           <Icon
             id="cd"
@@ -102,7 +102,7 @@ export const FeaturesOptions = ({ item }) => {
         </li>
       )}
 
-      {item.details.radio && item.details.radio != 0 && (
+      {item.details.radio != 0 && (
         <li className={css.item}>
           <Icon
             id="radio"
@@ -115,7 +115,7 @@ export const FeaturesOptions = ({ item }) => {
         </li>
       )}
 
-      {item.details.hob && item.details.hob != 0 && (
+      {item.details.hob != 0 && (
         <li className={css.item}>
           <Icon
             id="hob"
@@ -128,7 +128,7 @@ export const FeaturesOptions = ({ item }) => {
         </li>
       )}
 
-      {item.details.freezer && item.details.freezer != 0 && (
+      {item.details.freezer != 0 && (
         <li className={css.item}>
           <Icon
             id="fridge"
@@ -141,7 +141,7 @@ export const FeaturesOptions = ({ item }) => {
         </li>
       )}
 
-      {item.details.toilet && item.details.toilet != 0 && (
+      {item.details.toilet != 0 && (
         <li className={css.item}>
           <Icon
             id="toilet"
@@ -154,7 +154,7 @@ export const FeaturesOptions = ({ item }) => {
         </li>
       )}
 
-      {item.details.shower && item.details.shower != 0 && (
+      {item.details.shower != 0 && (
         <li className={css.item}>
           <Icon
             id="shower"
@@ -167,7 +167,7 @@ export const FeaturesOptions = ({ item }) => {
         </li>
       )}
 
-      {item.details.gas && item.details.gas != 0 && (
+      {item.details.gas != 0 && (
         <li className={css.item}>
           <Icon
             id="gas"
@@ -193,7 +193,7 @@ export const FeaturesOptions = ({ item }) => {
         </li>
       )}
 
-      {item.details.microwave && item.details.microwave != 0 && (
+      {item.details.microwave != 0 && (
         <li className={css.item}>
           <Icon
             id="microwave"

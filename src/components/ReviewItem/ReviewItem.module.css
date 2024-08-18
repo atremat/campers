@@ -1,0 +1,50 @@
+.item {
+}
+
+.userInfo {
+  width: 172px;
+  height: 60px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: #f2f4f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #e44848;
+}
+
+.nameWrapper {
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33333;
+  color: #101828;
+  margin-bottom: 4px;
+}
+
+.text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}

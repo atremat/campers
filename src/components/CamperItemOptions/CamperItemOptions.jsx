@@ -39,7 +39,7 @@ export const CamperItemOptions = ({ item }) => {
           item.engine.slice(1).toLowerCase()}
       </li>
 
-      {item.details.kitchen && item.details.kitchen != 0 && (
+      {item.details.kitchen != 0 && (
         <li className={css.item}>
           <Icon
             id="kitchen"
@@ -63,7 +63,7 @@ export const CamperItemOptions = ({ item }) => {
         {item.details.beds} beds
       </li>
 
-      {item.details.airConditioner && item.details.airConditioner != 0 && (
+      {item.details.airConditioner != 0 && (
         <li className={css.item}>
           <Icon
             id="ac"
