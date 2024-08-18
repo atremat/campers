@@ -3,6 +3,7 @@ import { fetchCampers } from './operations';
 
 const campersInitialState = {
   items: [],
+  favorites: [],
   loading: false,
   error: null,
 };
@@ -20,12 +21,18 @@ const isRejected = (state, action) => {
 const campersSlice = createSlice({
   name: 'campers',
   initialState: campersInitialState,
-  // reducers: {
-  //   //save {id,name,number}, which we have to edit
-  //   setContactForEdit: (state, action) => {
-  //     state.contactForEdit = action.payload;
-  //   },
-  // },
+  reducers: {
+    //toggle state of favorite
+    toggleFavorite: (state, action) => {
+      const id = action.payload;
+      const index = state.favorites.indexOf(id);
+      if (index !== -1) {
+        state.favorites.splice(index, 1);
+      } else {
+        state.favorites.push(id);
+      }
+    },
+  },
   extraReducers: builder => {
     builder
       //fetch contacts
@@ -40,4 +47,4 @@ const campersSlice = createSlice({
 
 export const campersReducer = campersSlice.reducer;
 
-// export const { setContactForEdit } = contactsSlice.actions;
+export const { toggleFavorite } = campersSlice.actions;

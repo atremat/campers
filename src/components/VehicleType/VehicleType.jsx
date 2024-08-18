@@ -8,7 +8,6 @@ export const VehicleType = () => {
 
   const handleChange = e => {
     setVehicleType(e.target.value);
-    console.log('radio changed');
   };
 
   return (

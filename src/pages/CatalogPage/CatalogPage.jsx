@@ -11,6 +11,7 @@ export const CatalogPage = () => {
   useEffect(() => {
     dispatch(fetchCampers());
   }, [dispatch]);
+
   return (
     <main className={css.main}>
       <SideBar />

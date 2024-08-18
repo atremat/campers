@@ -28,7 +28,7 @@ export const Navigation = () => {
               </NavLink>
             </li>
             <li className={css.item}>
-              <NavLink to="/favorite" className={buildLinkClass}>
+              <NavLink to="/favorites" className={buildLinkClass}>
                 Favorite
               </NavLink>
             </li>
