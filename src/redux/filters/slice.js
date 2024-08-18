@@ -16,8 +16,30 @@ const filtersSlice = createSlice({
     changeFilterLocation(state, action) {
       state.location = action.payload;
     },
+    toggleAC(state) {
+      state.isAC = !state.isAC;
+    },
+    toggleTransmission(state) {
+      state.isAutomatic = !state.isAutomatic;
+    },
+    toggleKitchen(state) {
+      state.isKitchen = !state.isKitchen;
+    },
+    toggleTV(state) {
+      state.isTV = !state.isTV;
+    },
+    toggleShower(state) {
+      state.isShower = !state.isShower;
+    },
   },
 });
 
-export const { changeFilterLocation } = filtersSlice.actions;
+export const {
+  changeFilterLocation,
+  toggleAC,
+  toggleTransmission,
+  toggleKitchen,
+  toggleTV,
+  toggleShower,
+} = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

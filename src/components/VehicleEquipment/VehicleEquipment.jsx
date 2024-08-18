@@ -1,7 +1,29 @@
 import Icon from '../Icon/Icon';
 import css from './VehicleEquipment.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectAC,
+  selectAutomatic,
+  selectKitchen,
+  selectShower,
+  selectTV,
+} from '../../redux/filters/selectors';
+import {
+  toggleAC,
+  toggleKitchen,
+  toggleShower,
+  toggleTransmission,
+  toggleTV,
+} from '../../redux/filters/slice';
 
 export const VehicleEquipment = () => {
+  const dispatch = useDispatch();
+  const isAC = useSelector(selectAC);
+  const isAutomatic = useSelector(selectAutomatic);
+  const isKitchen = useSelector(selectKitchen);
+  const isTV = useSelector(selectTV);
+  const isShower = useSelector(selectShower);
+
   return (
     <div className={css.container}>
       <h4 className={css.title}>Vehicle equipment</h4>
@@ -18,9 +40,12 @@ export const VehicleEquipment = () => {
           >
             <input
               type="checkbox"
-              name=""
+              name="ac"
+              checked={isAC}
+              onChange={() => dispatch(toggleAC())}
               id="ac"
               style={{ display: 'none' }}
+              className={css.inputCheckbox}
             />
             <Icon
               id="ac"
@@ -44,9 +69,12 @@ export const VehicleEquipment = () => {
           >
             <input
               type="checkbox"
-              name=""
+              name="transmission"
               id="transmission"
+              checked={isAutomatic}
+              onChange={() => dispatch(toggleTransmission())}
               style={{ display: 'none' }}
+              className={css.inputCheckbox}
             />
             <Icon
               id="transmission"
@@ -70,9 +98,12 @@ export const VehicleEquipment = () => {
           >
             <input
               type="checkbox"
-              name=""
+              name="kitchen"
               id="kitchen"
+              checked={isKitchen}
+              onChange={() => dispatch(toggleKitchen())}
               style={{ display: 'none' }}
+              className={css.inputCheckbox}
             />
             <Icon
               id="kitchen"
@@ -96,9 +127,12 @@ export const VehicleEquipment = () => {
           >
             <input
               type="checkbox"
-              name=""
+              name="tv"
               id="tv"
+              checked={isTV}
+              onChange={() => dispatch(toggleTV())}
               style={{ display: 'none' }}
+              className={css.inputCheckbox}
             />
             <Icon
               id="tv"
@@ -122,9 +156,12 @@ export const VehicleEquipment = () => {
           >
             <input
               type="checkbox"
-              name=""
+              name="shower"
               id="shower"
+              checked={isShower}
+              onChange={() => dispatch(toggleShower())}
               style={{ display: 'none' }}
+              className={css.inputCheckbox}
             />
             <Icon
               id="shower"

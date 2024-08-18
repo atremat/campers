@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     <main className={css.main}>
       <div className={css.contaier}>
-        <h1>Camersland</h1>
+        <h1>Campersland</h1>
         <p>
           We provide camper van rental services in Ukraine. Here you can choose
           the camper of you dreams. Go to the catalog to choose one. Welcome to

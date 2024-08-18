@@ -42,3 +42,7 @@
   text-align: center;
   color: #101828;
 }
+
+.item:has(.inputCheckbox:checked) {
+  border: 1px solid #e44848;
+}
