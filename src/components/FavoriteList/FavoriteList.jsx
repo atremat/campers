@@ -1,13 +1,14 @@
 import { useSelector } from 'react-redux';
 import css from './FavoriteList.module.css';
-import { selectFavoritesList } from '../../redux/campers/selectors';
+// import { selectFavoritesList } from '../../redux/campers/selectors';
 import { CatalogItem } from '../CatalogItem/CatalogItem';
 import { useEffect, useState } from 'react';
+import { selectFilteredFavCampers } from '../../redux/filters/selectors';
 
 const PER_PAGE = 4;
 
 export const FavoriteList = ({ favoriteIds }) => {
-  const campersList = useSelector(selectFavoritesList);
+  const campersList = useSelector(selectFilteredFavCampers);
 
   const [page, setPage] = useState(1);
   const [visibleCampersList, setVisibleCampersList] = useState(
