@@ -41,13 +41,13 @@ export const selectFilteredCampers = createSelector(
         location,
         form,
         transmission,
-        details: { AC, toilet, shower, TV, kitchen },
+        details: { airConditioner, toilet, shower, TV, kitchen },
       }) => {
         let result =
           location.toLowerCase().includes(valueFilter.trim().toLowerCase()) &&
           form === vehicleType;
         if (isAC) {
-          result = result && AC > 0;
+          result = result && airConditioner > 0;
         }
 
         if (isTV) {
@@ -74,15 +74,59 @@ export const selectFilteredCampers = createSelector(
 );
 
 export const selectFilteredFavCampers = createSelector(
-  [selectFavoritesList, selectLocation, selectVehicleType],
-  (campers, valueFilter, vehicleType) => {
-    const visibleContacts = campers.filter(({ location, form }) => {
-      return (
-        location.toLowerCase().includes(valueFilter.trim().toLowerCase()) &&
-        form === vehicleType
-      );
-    });
+  [
+    selectFavoritesList,
+    selectLocation,
+    selectVehicleType,
+    selectAC,
+    selectShower,
+    selectTV,
+    selectKitchen,
+    selectAutomatic,
+  ],
+  (
+    campers,
+    valueFilter,
+    vehicleType,
+    isAC,
+    isShower,
+    isTV,
+    isKitchen,
+    isAutomatic
+  ) => {
+    const visibleCampers = campers.filter(
+      ({
+        location,
+        form,
+        transmission,
+        details: { airConditioner, toilet, shower, TV, kitchen },
+      }) => {
+        let result =
+          location.toLowerCase().includes(valueFilter.trim().toLowerCase()) &&
+          form === vehicleType;
+        if (isAC) {
+          result = result && airConditioner > 0;
+        }
 
-    return visibleContacts;
+        if (isTV) {
+          result = result && TV > 0;
+        }
+
+        if (isKitchen) {
+          result = result && kitchen > 0;
+        }
+
+        if (isAutomatic) {
+          result = result && transmission.toLowerCase() == 'automatic';
+        }
+
+        if (isShower) {
+          result = result && (toilet > 0 || shower > 0);
+        }
+        return result;
+      }
+    );
+
+    return visibleCampers;
   }
 );

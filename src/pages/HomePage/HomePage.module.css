@@ -18,7 +18,7 @@ p {
 }
 
 .hero {
-  background-image: url('../../assets/camper.webp');
+  background-image: url('../../assets/camper.jpg');
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -27,8 +27,8 @@ p {
 
 .list {
   position: absolute;
-  top: 150px;
-  right: 600px;
+  top: 20px;
+  left: 20px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 24px;
