@@ -18,3 +18,9 @@ export const selectFavoritesList = createSelector(
 export const selectLoading = state => state.campers.loading;
 
 export const selectError = state => state.campers.error;
+export const selectPage = state => state.campers.page;
+export const selectPerPage = state => state.campers.perPage;
+export const selectSortOrder = state => state.campers.sortOrder;
+export const selectSortBy = state => state.campers.sortBy;
+export const selectTotalItems = state => state.campers.totalItems;
+// export const selectFilter = state => state.campers.filter;

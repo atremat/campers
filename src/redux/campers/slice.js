@@ -4,6 +4,12 @@ import { fetchCampers } from './operations';
 const campersInitialState = {
   items: [],
   favorites: [],
+  page: 1,
+  perPage: 10,
+  sortOrder: 'asc',
+  sortBy: '_id',
+  totalItems: 1,
+  filter: {},
   loading: false,
   error: null,
 };
@@ -31,6 +37,18 @@ const campersSlice = createSlice({
       } else {
         state.favorites.push(id);
       }
+    },
+    setPage: (state, action) => {
+      state.page = action.payload;
+    },
+    setPerPage: (state, action) => {
+      state.perPage = action.payload;
+    },
+    setSortBy: (state, action) => {
+      state.sortBy = action.payload;
+    },
+    setSortOrder: (state, action) => {
+      state.sortOrder = action.payload;
     },
   },
   extraReducers: builder => {
