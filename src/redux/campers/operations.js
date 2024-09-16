@@ -16,9 +16,9 @@ export const fetchCampers = createAsyncThunk(
           filter: JSON.stringify(queryParams.filter || {}),
         },
       });
-      console.log(response.data.data.data);
+      console.log(response.data.data);
 
-      return response.data.data.data;
+      return response.data.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

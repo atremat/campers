@@ -53,11 +53,12 @@ const campersSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      //fetch contacts
+      //fetch campers
       .addCase(fetchCampers.pending, isPending)
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload;
+        state.items = action.payload.data;
+        state.totalItems = action.payload.totalItems;
       })
       .addCase(fetchCampers.rejected, isRejected);
   },

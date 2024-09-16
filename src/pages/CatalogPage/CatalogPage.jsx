@@ -12,6 +12,7 @@ import {
   selectSortOrder,
 } from '../../redux/campers/selectors';
 import Loader from '../../components/Loader/Loader';
+import { selectLocation } from '../../redux/filters/selectors';
 
 export const CatalogPage = () => {
   const isLoading = useSelector(selectLoading);
@@ -20,7 +21,8 @@ export const CatalogPage = () => {
   const perPage = useSelector(selectPerPage);
   const sortBy = useSelector(selectSortBy);
   const sortOrder = useSelector(selectSortOrder);
-  const filter = {};
+  const location = useSelector(selectLocation);
+  const filter = { location };
   const params = { page, perPage, sortBy, sortOrder, filter };
 
   useEffect(() => {

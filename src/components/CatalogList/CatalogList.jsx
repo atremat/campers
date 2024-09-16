@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
 import css from './CatalogList.module.css';
 import { CatalogItem } from '../CatalogItem/CatalogItem';
-import { selectFilteredCampers } from '../../redux/filters/selectors';
 import { useEffect, useState } from 'react';
+import { selectCampersList } from '../../redux/campers/selectors';
 
 const PER_PAGE = 4;
 
 export const CatalogList = () => {
-  const campersList = useSelector(selectFilteredCampers);
+  const campersList = useSelector(selectCampersList);
 
   const [page, setPage] = useState(1);
   const [visibleCampersList, setVisibleCampersList] = useState(
